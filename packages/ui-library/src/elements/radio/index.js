@@ -16,7 +16,7 @@ const classNameMap = {
  * @param {string} name Name.
  * @param {string} value Value.
  * @param {JSX.string} label Label.
- * @param {JSX.string} srLabel Screen reader label.
+ * @param {JSX.string} screenReaderLabel Screen reader label.
  * @param {string} [variant] Variant.
  * @param {string} [className] CSS class.
  * @returns {JSX.Element} Radio component.
@@ -26,7 +26,7 @@ const Radio = ( {
 	name,
 	value,
 	label,
-	srLabel,
+	screenReaderLabel,
 	variant,
 	className,
 	...props
@@ -48,7 +48,7 @@ const Radio = ( {
 					name={ name }
 					value={ value }
 					className="yst-radio__input"
-					aria-label={ srLabel }
+					aria-label={ screenReaderLabel }
 					{ ...props }
 				/>
 				<label htmlFor={ id } className="yst-radio__label">
@@ -84,13 +84,13 @@ Radio.propTypes = {
 	id: PropTypes.string.isRequired,
 	value: PropTypes.string.isRequired,
 	label: PropTypes.string.isRequired,
-	srLabel: PropTypes.string,
+	screenReaderLabel: PropTypes.string,
 	variant: PropTypes.oneOf( Object.keys( classNameMap.variant ) ),
 	className: PropTypes.string,
 };
 
 Radio.defaultProps = {
-	srLabel: "",
+	screenReaderLabel: "",
 	variant: "default",
 	className: "",
 };
