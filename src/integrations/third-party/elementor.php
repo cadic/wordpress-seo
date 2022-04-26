@@ -150,7 +150,7 @@ class Elementor implements Integration_Interface {
 	 * Registers our Elementor hooks.
 	 */
 	public function register_elementor_hooks() {
-		if ( ! $this->display_metabox( $this->get_metabox_post()->post_type ) ) {
+		if ( is_null( $this->get_metabox_post() ) || ! $this->display_metabox( $this->get_metabox_post()->post_type ) ) {
 			return;
 		}
 
